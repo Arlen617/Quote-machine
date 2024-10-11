@@ -1,0 +1,107 @@
+:root {
+  --text: #031519;
+  --background: #cff1f7;
+  --primary: #41b7c3;
+  --secondary: #b3bc79;
+  --accent: #5770eb;
+  --tweet-button-bg: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
+  box-shadow: 0 0.0625rem 0.3125rem var(--accent);
+  width: 100%;
+}
+
+.quote-box {
+  width: 90%;
+  height: auto;
+  margin: 4.375rem auto 0 auto;
+  max-width: 29.375rem;
+}
+.quote-box .quote {
+  width: 100%;
+  font-size: 1.875rem;
+  text-align: start;
+}
+.quote-box .author {
+  text-align: end;
+  font-size: 1.375rem;
+}
+.quote-box button,
+.quote-box a {
+  display: block;
+  height: 1.875rem;
+  border-radius: 0.625rem;
+  border: none;
+  box-shadow: 0.0625rem 0.0625rem 0.5rem var(--accent);
+  width: 14.6875rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.quote-box button:hover,
+.quote-box button:focus,
+.quote-box a:hover,
+.quote-box a:focus {
+  transform: scale(1.1);
+  box-shadow: 0.0625rem 0.0625rem 1.5625rem var(--accent);
+  cursor: pointer;
+}
+.quote-box button:active {
+  box-shadow: none;
+}
+.quote-box .quote-button {
+  background: var(--primary);
+  font-weight: 900;
+  margin-top: 1.875rem;
+}
+.quote-box .tweet-button {
+  margin-top: 0.9375rem;
+  background-color: #e8f9fc;
+}
+.quote-box .tweet-button img {
+  display: block;
+  height: auto;
+  width: 1.875rem;
+  margin: 0 auto;
+}
+
+.footer {
+  display: flex;
+  align-items: end;
+  margin-top: auto;
+  padding-right: 0.3125rem;
+}
+.footer p {
+  width: 100%;
+  text-align: end;
+}
+.footer a {
+  color: inherit;
+}
+.footer a:hover {
+  font-size: 1.25rem;
+}
+
+/*# sourceMappingURL=style.css.map */

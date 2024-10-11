@@ -1,0 +1,61 @@
+@use "function" as *;
+
+.quote-box {
+  width: 90%;
+  height: auto;
+  margin: rem(70) auto 0 auto;
+  max-width: rem(470);
+
+  .quote {
+    width: 100%;
+    font-size: rem(30);
+    text-align: start;
+  }
+
+  .author {
+    text-align: end;
+    font-size: rem(22);
+  }
+
+  button,
+  a {
+    display: block;
+    height: rem(30);
+    border-radius: rem(10);
+    border: none;
+    box-shadow: rem(1) rem(1) rem(8) var(--accent);
+    width: rem(235);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  button:hover,
+  button:focus,
+  a:hover,
+  a:focus {
+    transform: scale(1.1);
+    box-shadow: rem(1) rem(1) rem(25) var(--accent);
+    cursor: pointer;
+  }
+
+  button:active {
+    box-shadow: none;
+  }
+
+  .quote-button {
+    background: var(--primary);
+    font-weight: 900;
+    margin-top: rem(30);
+  }
+
+  .tweet-button {
+    margin-top: rem(15);
+    background-color: #e8f9fc;
+    img {
+      display: block;
+      height: auto;
+      width: rem(30);
+      margin: 0 auto;
+    }
+  }
+}

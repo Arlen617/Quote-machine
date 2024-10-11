@@ -1,0 +1,13 @@
+@use "function" as *;
+@use "boilerplate";
+
+.header {
+    text-align: center;
+    padding-top: 0.8125rem;
+    padding-bottom: 0.8125rem;
+    box-shadow: 0 rem(1) rem(5) var(--accent);
+    width: 100%;
+
+}
+
+
