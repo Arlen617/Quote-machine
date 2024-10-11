@@ -2,12 +2,17 @@
 @use "boilerplate";
 
 .header {
-    text-align: center;
-    padding-top: 0.8125rem;
-    padding-bottom: 0.8125rem;
-    box-shadow: 0 rem(1) rem(5) var(--accent);
-    width: 100%;
+  text-align: center;
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
+  box-shadow: 0 rem(1) rem(5) var(--accent);
+  width: 100%;
+ 
 
+  h1 {
+    background: linear-gradient(120deg, var(--background), var(--accent));
+    background-clip: text;
+    color: transparent;
+    font-size: rem(60);
+  }
 }
-
-

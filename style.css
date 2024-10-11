@@ -33,6 +33,12 @@ body {
   box-shadow: 0 0.0625rem 0.3125rem var(--accent);
   width: 100%;
 }
+.header h1 {
+  background: linear-gradient(120deg, var(--background), var(--accent));
+  background-clip: text;
+  color: transparent;
+  font-size: 3.75rem;
+}
 
 .quote-box {
   width: 90%;
@@ -42,6 +48,7 @@ body {
 }
 .quote-box .quote {
   width: 100%;
+  min-height: 10.75rem;
   font-size: 1.875rem;
   text-align: start;
 }

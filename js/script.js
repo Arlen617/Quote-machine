@@ -1,6 +1,7 @@
 const quoteText = document.getElementById("text");
 const quoteAuthor = document.getElementById("author");
 const newQuoteBtn = document.getElementById("new-quote");
+const tweetBtn = document.getElementById("tweet-quote");
 const quoteManager = {
   quotes: {},
   quoteNumber: 0,
@@ -12,7 +13,6 @@ const quoteManager = {
   refreshQuotes: async function () {
     if (!Object.keys(this.quotes).length || this.quoteNumber >= 50) {
       await this.fetchQuotes();
-      console.log("obj refresh");
     }
 
     if (this.quoteNumber >= 50) {
@@ -23,13 +23,23 @@ const quoteManager = {
     await this.refreshQuotes();
     const quoteObj = this.quotes[this.quoteNumber];
     quoteText.textContent = quoteObj["q"];
-    quoteAuthor.textContent = quoteObj["a"];
+    quoteAuthor.textContent = "― " + quoteObj["a"];
     this.quoteNumber += 1;
-    console.log(this.quoteNumber);
   },
 };
+
+const tweet = {
+  link: "https://twitter.com/intent/tweet?text=",
+  makeTweet: function () {
+    tweetBtn.href =
+      this.link + quoteText.innerText + " " + quoteAuthor.innerText;
+  },
+};
+
 quoteManager.showQuote();
+tweet.makeTweet();
 
 newQuoteBtn.addEventListener("click", () => {
   quoteManager.showQuote();
+  tweet.makeTweet();
 });
