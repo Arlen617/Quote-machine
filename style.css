@@ -68,9 +68,7 @@ body {
   margin-right: auto;
 }
 .quote-box button:hover,
-.quote-box button:focus,
-.quote-box a:hover,
-.quote-box a:focus {
+.quote-box a:hover {
   transform: scale(1.1);
   box-shadow: 0.0625rem 0.0625rem 1.5625rem var(--accent);
   cursor: pointer;

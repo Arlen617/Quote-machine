@@ -3,28 +3,22 @@ const quoteAuthor = document.getElementById("author");
 const newQuoteBtn = document.getElementById("new-quote");
 const tweetBtn = document.getElementById("tweet-quote");
 const quoteManager = {
-  quotes: {},
-  quoteNumber: 0,
-  fetchQuotes: async function () {
-    const res = await fetch("https://zenquotes.io/api/quotes");
-    const data = await res.json();
-    this.quotes = data;
-  },
-  refreshQuotes: async function () {
-    if (!Object.keys(this.quotes).length || this.quoteNumber >= 50) {
-      await this.fetchQuotes();
-    }
-
-    if (this.quoteNumber >= 50) {
-      this.quoteNumber = 0;
-    }
+  author: "",
+  quote: {},
+  fetchQuote: async function () {
+    const res = await fetch("https://stoic.tekloon.net/stoic-quote");
+    const obj = await res.json();
+    const { data } = obj;
+    const { author, quote } = data;
+    this.author = author;
+    this.quote = quote;
   },
   showQuote: async function () {
-    await this.refreshQuotes();
-    const quoteObj = this.quotes[this.quoteNumber];
-    quoteText.textContent = quoteObj["q"];
-    quoteAuthor.textContent = "― " + quoteObj["a"];
-    this.quoteNumber += 1;
+    await this.fetchQuote();
+    console.log(this.author);
+    console.log(this.quote);
+    quoteText.textContent = this.quote;
+    quoteAuthor.textContent = this.author;
   },
 };
 

@@ -31,9 +31,7 @@
   }
 
   button:hover,
-  button:focus,
-  a:hover,
-  a:focus {
+  a:hover {
     transform: scale(1.1);
     box-shadow: rem(1) rem(1) rem(25) var(--accent);
     cursor: pointer;
