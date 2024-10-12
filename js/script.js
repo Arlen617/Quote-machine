@@ -5,20 +5,22 @@ const tweetBtn = document.getElementById("tweet-quote");
 const quoteManager = {
   author: "",
   quote: {},
+  randomIndex: function () {
+    return Math.floor(Math.random() * 30) + 1;
+  },
   fetchQuote: async function () {
-    const res = await fetch("https://stoic.tekloon.net/stoic-quote");
-    const obj = await res.json();
-    const { data } = obj;
+    const res = await fetch(
+      `https://dummyjson.com/quotes/${this.randomIndex()}`
+    );
+    const data = await res.json();
     const { author, quote } = data;
     this.author = author;
     this.quote = quote;
   },
   showQuote: async function () {
     await this.fetchQuote();
-    console.log(this.author);
-    console.log(this.quote);
-    quoteText.textContent = this.quote;
     quoteAuthor.textContent = this.author;
+    quoteText.textContent = this.quote;
   },
 };
 
